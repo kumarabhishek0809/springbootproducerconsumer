@@ -20,6 +20,8 @@ public class Consumer implements Runnable {
 
     @Override
     public void run() {
-        processor.decrementCounter();
+        if (!processor.isExit()) {
+            processor.decrementCounter();
+        }
     }
 }

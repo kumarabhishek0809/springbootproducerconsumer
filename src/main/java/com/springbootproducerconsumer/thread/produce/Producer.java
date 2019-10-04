@@ -20,6 +20,8 @@ public class Producer implements Runnable {
 
     @Override
     public void run()  {
-        processor.incrementCounter();
+        if(!processor.isExit()) {
+            processor.incrementCounter();
+        }
     }
 }
