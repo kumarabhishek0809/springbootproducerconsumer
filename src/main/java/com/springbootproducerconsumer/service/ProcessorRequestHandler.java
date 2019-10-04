@@ -2,7 +2,7 @@ package com.springbootproducerconsumer.service;
 
 import com.springbootproducerconsumer.dto.ProducerConsumerRequest;
 import com.springbootproducerconsumer.dto.response.CustomResponse;
-import com.springbootproducerconsumer.repository.ProducerConsumerRequestRepository;
+import com.springbootproducerconsumer.repository.RequestDetailsRepository;
 import com.springbootproducerconsumer.service.manager.IProcessorManager;
 import com.springbootproducerconsumer.service.mapper.ProducerConsumerRequestMapper;
 import com.springbootproducerconsumer.service.validator.IProcessorValidator;
@@ -27,7 +27,7 @@ public class ProcessorRequestHandler implements IProcessorRequestHandler {
     private IProcessorValidator validator;
 
     @Autowired
-    private ProducerConsumerRequestRepository producerConsumerRequestRepository;
+    private RequestDetailsRepository requestDetailsRepository;
 
     @Autowired
     private ProducerConsumerRequestMapper producerConsumerRequestMapper;
@@ -60,7 +60,7 @@ public class ProcessorRequestHandler implements IProcessorRequestHandler {
         HttpStatus responseStatus = HttpStatus.CREATED;
         CustomResponse customResponse = new CustomResponse();
 
-        producerConsumerRequestRepository.save(producerConsumerRequestMapper.map(producerConsumerRequest));
+        requestDetailsRepository.save(producerConsumerRequestMapper.map(producerConsumerRequest));
 
         if (validator.validate(producerConsumerRequest)) {
 
