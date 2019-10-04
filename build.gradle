@@ -32,8 +32,10 @@ dependencies {
 
 	compile('org.springframework.boot:spring-boot-starter-data-jpa'){
 		exclude(module: 'spring-boot-starter-logging')
+		exclude(module: 'org.hibernate')
 	}
 	compile "mysql:mysql-connector-java"
+	compile('org.hibernate:hibernate-core:5.4.4.Final')
 
 
 	//Java
@@ -55,7 +57,7 @@ dependencies {
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 
-	compile('org.hibernate:hibernate-core:5.4.4.Final')
+
 
 	compile('org.mapstruct:mapstruct-jdk8:1.3.0.Final')
 	annotationProcessor('org.mapstruct:mapstruct-processor:1.3.0.Final')

@@ -26,7 +26,7 @@ public class ProcessorRequestHandler implements IProcessorRequestHandler {
     @Autowired
     private IProcessorValidator validator;
 
-    //@Autowired
+    @Autowired
     private ProducerConsumerRequestRepository producerConsumerRequestRepository;
 
     @Autowired
@@ -36,8 +36,6 @@ public class ProcessorRequestHandler implements IProcessorRequestHandler {
     public ResponseEntity<CustomResponse> updateCounter(int counter){
         HttpStatus responseStatus = HttpStatus.OK;
         CustomResponse customResponse = new CustomResponse();
-
-        //producerConsumerRequestRepository.save(producerConsumerRequestMapper.map(producerConsumerRequest));
 
         if (validator.validate(counter)) {
 
@@ -62,7 +60,7 @@ public class ProcessorRequestHandler implements IProcessorRequestHandler {
         HttpStatus responseStatus = HttpStatus.CREATED;
         CustomResponse customResponse = new CustomResponse();
 
-        //producerConsumerRequestRepository.save(producerConsumerRequestMapper.map(producerConsumerRequest));
+        producerConsumerRequestRepository.save(producerConsumerRequestMapper.map(producerConsumerRequest));
 
         if (validator.validate(producerConsumerRequest)) {
 
