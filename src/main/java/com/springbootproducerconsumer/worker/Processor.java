@@ -11,7 +11,7 @@ import java.util.concurrent.locks.ReentrantLock;
 @Service
 @Log4j2
 public class Processor {
-    public static AtomicInteger counter = new AtomicInteger(10);
+    public static AtomicInteger counter = new AtomicInteger(50);
     final Lock lock = new ReentrantLock(true);
     final private Condition valueReachedExit = lock.newCondition();
     //it cannot be static otherwise once it is exit it will never come back.
