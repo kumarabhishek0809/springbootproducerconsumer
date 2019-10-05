@@ -8,11 +8,8 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.FilterType;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.test.context.junit4.SpringRunner;
-
+/*
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @EnableAutoConfiguration(exclude = {
@@ -21,9 +18,11 @@ import org.springframework.test.context.junit4.SpringRunner;
         HibernateJpaAutoConfiguration.class,
         JpaRepositoriesAutoConfiguration.class
 })
+
+ */
 public class SpringbootproducerconsumerApplicationTests {
 
-  //  @Test
+    @Test
     public void contextLoads() {
     }
 

@@ -13,7 +13,7 @@ import java.util.concurrent.ExecutionException;
 public class ProcessorTest {
 
 
-    @Test
+    //@Test
     public void testProcessor(){
 
         Processor processor = new Processor();

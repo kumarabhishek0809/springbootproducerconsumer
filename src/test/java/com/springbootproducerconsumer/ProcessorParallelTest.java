@@ -13,7 +13,7 @@ import java.util.concurrent.*;
 @Log4j2
 public class ProcessorParallelTest {
 
-    @Test
+    //@Test
     public void testParallel() throws InterruptedException {
 
         ExecutorService executorService = Executors.newScheduledThreadPool(Runtime.getRuntime().availableProcessors());
