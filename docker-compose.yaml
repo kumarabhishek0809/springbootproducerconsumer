@@ -1,0 +1,49 @@
+version: '3.7'
+services:
+
+  producerconsumer:
+    container_name: spring-boot-producerconsumer
+    image: spring-boot-producerconsumer
+    volumes:
+      - spring-boot-producerconsumer-repo:/var/lib/producerconsumer-repo
+    expose:
+      - 8080
+    ports:
+      - 8080:8080
+    networks:
+      - spring-producer-consumer
+    links:
+      - database
+    environment:
+      - DATABASE_HOST=database
+      - DATABASE_USER=root
+      - DATABASE_PASSWORD=root
+      - DATABASE_NAME=root
+      - DATABASE_PORT=3306
+    depends_on:
+      - database
+    restart: always
+
+  database:
+    container_name: mysql-database
+    image: mysql
+    environment:
+      MYSQL_DATABASE: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: root
+      MYSQL_ROOT_HOST: '%'
+    ports:
+      - "3306:3306"
+    networks:
+      - spring-producer-consumer
+    restart: always
+
+networks:
+  spring-producer-consumer:
+    driver: bridge
+
+volumes:
+   producerconsumer-repo:
+     external: true
+
+
