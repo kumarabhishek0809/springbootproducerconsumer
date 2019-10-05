@@ -13,7 +13,7 @@ import org.springframework.context.annotation.FilterType;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.test.context.junit4.SpringRunner;
 
-/*@RunWith(SpringRunner.class)
+@RunWith(SpringRunner.class)
 @SpringBootTest
 @EnableAutoConfiguration(exclude = {
         DataSourceAutoConfiguration.class,
@@ -21,7 +21,6 @@ import org.springframework.test.context.junit4.SpringRunner;
         HibernateJpaAutoConfiguration.class,
         JpaRepositoriesAutoConfiguration.class
 })
-*/
 public class SpringbootproducerconsumerApplicationTests {
 
   //  @Test

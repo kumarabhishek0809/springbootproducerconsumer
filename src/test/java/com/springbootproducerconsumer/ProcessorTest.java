@@ -4,13 +4,17 @@ import com.springbootproducerconsumer.thread.consume.Consumer;
 import com.springbootproducerconsumer.thread.produce.Producer;
 import com.springbootproducerconsumer.worker.Processor;
 import lombok.extern.log4j.Log4j2;
+import org.junit.Assert;
+import org.junit.Test;
 
 import java.util.concurrent.ExecutionException;
 
 @Log4j2
 public class ProcessorTest {
-    public static void main(String[] args) throws InterruptedException, ExecutionException {
 
+
+    @Test
+    public void testProcessor(){
 
         Processor processor = new Processor();
         boolean exitProgram = Processor.counter.get() == 0 || Processor.counter.get() == 100;
@@ -34,6 +38,6 @@ public class ProcessorTest {
             if (exitProgram) break;
         }
         log.info("Exit Call MYsql");
-
+        Assert.assertEquals(1,Processor.counter.get());
     }
 }

@@ -4,6 +4,8 @@ import com.springbootproducerconsumer.thread.consume.Consumer;
 import com.springbootproducerconsumer.thread.produce.Producer;
 import com.springbootproducerconsumer.worker.Processor;
 import lombok.extern.log4j.Log4j2;
+import org.junit.Assert;
+import org.junit.Test;
 
 import java.util.List;
 import java.util.concurrent.*;
@@ -11,7 +13,8 @@ import java.util.concurrent.*;
 @Log4j2
 public class ProcessorParallelTest {
 
-    public static void main(String[] args) throws InterruptedException {
+    @Test
+    public void testParallel() throws InterruptedException {
 
         ExecutorService executorService = Executors.newScheduledThreadPool(Runtime.getRuntime().availableProcessors());
         List<Callable<String>> taskList = new CopyOnWriteArrayList<>();
@@ -26,7 +29,7 @@ public class ProcessorParallelTest {
                 new Thread(new Consumer(processor)).start();
 
             } else if (randomInt % 3 == 0) {
-                processor.updateCounterValue(randomInt%9);
+                processor.updateCounterValue(randomInt % 9);
             } else {
                 new Thread(new Producer(processor)).start();
             }
@@ -39,6 +42,7 @@ public class ProcessorParallelTest {
         }
         log.info("Exit Call MYsql");
         executorService.shutdown();
+        Assert.assertEquals(1,Processor.counter.get());
     }
 
     private static void accept(Future<String> stringFuture) {
