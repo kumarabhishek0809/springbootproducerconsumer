@@ -30,7 +30,11 @@ docker volume create --name=spring-boot-producerconsumer-repo
 docker run -d --name=spring-boot-producerconsumer --publish=8080:8080 --volume=spring-boot-producerconsumer-repo:/var/lib/spring-boot-producerconsumer-repo spring-boot-producerconsumer:latest
 
 #As there are multiple services you need to run through, docker compose.
+##for running docker compose
+docker pull spring-boot-producerconsumer
+
 docker-compose up --build --remove-orphans
 
 ##to shut down
 docker-compose down
+

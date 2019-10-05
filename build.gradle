@@ -28,8 +28,8 @@ ext {
 	swaggerVersion = '2.9.2'
 }
 
-group = 'com.example'
-version = '0.0.1-SNAPSHOT'
+group = 'com.spring-producer-consumer'
+version = 'latest'
 sourceCompatibility = '1.8'
 
 configurations {
