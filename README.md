@@ -1,3 +1,10 @@
+##Prerequisite 
+
+Mapstruct and Lombok Plugin had been used.
+For enabling to you IDE please follow. 
+For MapStruct : https://mapstruct.org/documentation/ide-support/ 
+For Lomobk : https://www.baeldung.com/lombok-ide
+
 # Spring Boot Producer Consumer Thread Program.
 springbootproducerconsumer
 
