@@ -94,6 +94,7 @@ configurations {
 	}
 }
 
+/*
 task buildDocker(type: Docker, dependsOn: build) {
 	push = true
 	tag = 'kumarabhishek0809/spring-boot-producerconsumer'
@@ -106,3 +107,4 @@ task buildDocker(type: Docker, dependsOn: build) {
 		}
 	}
 }
+*/
